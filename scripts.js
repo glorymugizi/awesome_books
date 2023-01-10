@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const form = document.querySelector('#readBook');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
@@ -69,7 +70,6 @@ class Books {
     this.dotiBooks();
   }
 }
-
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
