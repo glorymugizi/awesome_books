@@ -44,7 +44,7 @@ class Books {
       const senti = document.createElement('div');
       displayTitle.innerText = `"${element.title}" by`;
       displayAuthor.innerText = element.author;
-      delbtn.innerHTML = `<button class="btn outer" onclick='deleteItem(${index})'>Remove</button>`;
+      delbtn.innerHTML = `<button class="btn outer" onclick='addedBook.removeBook(${index})'>Remove</button>`;
       delbtn.classList.add('deleteBook');
       container.classList.add('library', 'middle');
       senti.classList.add('library');
@@ -79,8 +79,5 @@ form.addEventListener('submit', (event) => {
 });
 
 const addedBook = new Books();
-const deleteItem = (id) => {
-  addedBook.removeBook(id);
-};
 
 window.addEventListener('load', addedBook.dotiBooks());
