@@ -69,18 +69,13 @@ class Books {
     this.dotiBooks();
   }
 }
-const error = document.querySelector('#error');
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (title.value === '') {
-    error.textContent = 'No field should be empty';
-  } else if (author.value === '') {
-    error.textContent = 'No field should be empty';
-  } else {
-    showArea.innerHTML = '';
-    const book = new Books();
-    book.dataStorage();
-  }
+
+  showArea.innerHTML = '';
+  const book = new Books();
+  book.dataStorage();
 });
 
 const addedBook = new Books();

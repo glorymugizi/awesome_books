@@ -39,6 +39,7 @@
 - **[local storage]**
 - **[Use objects to store and access data]**
 - **[Add and Remove books]**
+- **[Integrated javascript classes]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
