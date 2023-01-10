@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const form = document.querySelector('#readBook');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
@@ -70,13 +69,13 @@ class Books {
     this.dotiBooks();
   }
 }
-
+const error = document.querySelector('#error');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   if (title.value === '') {
-    alert('Please enter a book title');
+    error.textContent = 'No field should be empty';
   } else if (author.value === '') {
-    alert('Please enter a book author');
+    error.textContent = 'No field should be empty';
   } else {
     showArea.innerHTML = '';
     const book = new Books();

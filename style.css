@@ -3,6 +3,16 @@
   align-items: center;
 }
 
+#error {
+  color: #f00;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  width: 20rem;
+}
+
 .library {
   display: flex;
 }
