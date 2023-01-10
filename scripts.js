@@ -3,63 +3,81 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const showArea = document.querySelector('#displayBooks');
 
-function dotiBooks() {
-  const wrapper = document.createElement('div');
-  const bookStorage = localStorage.getItem('books');
-  const bookArray = JSON.parse(bookStorage);
-  bookArray.forEach((element, index) => {
-    const displayTitle = document.createElement('p');
-    const showAuthor = document.createElement('p');
-    const delbtn = document.createElement('div');
-    const container = document.createElement('div');
+class Books {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  dataStorage() {
+    const bookTitle = title.value;
+    const bookAuthor = author.value;
+    const book = new Books(bookTitle, bookAuthor);
+    if (localStorage.getItem('books') === null) {
+      const bookStore = [];
+      bookStore.push(book);
+      localStorage.setItem('books', JSON.stringify(bookStore));
+    } else {
+      const bookStorage = localStorage.getItem('books');
+      const bookArray = JSON.parse(bookStorage);
+      bookArray.push(book);
+      localStorage.setItem('books', JSON.stringify(bookArray));
+    }
+
+    title.value = '';
+    author.value = '';
+    this.dotiBooks();
+  }
+
+  dotiBooks() {
+    const wrapper = document.createElement('div');
     const hline = document.createElement('hr');
-    displayTitle.innerText = element.title;
-    showAuthor.innerText = element.author;
-    delbtn.innerHTML = `<button onclick='removeBook(${index})'>Remove</button>`;
-    delbtn.classList.add('deleteBook');
-    container.appendChild(displayTitle);
-    container.appendChild(showAuthor);
-    container.appendChild(delbtn);
-    container.appendChild(hline);
-    wrapper.appendChild(container);
-  });
-  showArea.appendChild(wrapper);
-}
-/* Take the data store it  */
-const storeObj = {};
-function dataStorage() {
-  if (localStorage.getItem('books') === null) {
-    const bookStore = [];
-    bookStore.push(storeObj);
-    localStorage.setItem('books', JSON.stringify(bookStore));
-  } else {
+    const bookStorage = localStorage.getItem('books');
+    const dotion = document.createElement('div');
+    dotion.innerText = this.author;
+    const bookArray = JSON.parse(bookStorage);
+    bookArray.forEach((element, index) => {
+      const displayTitle = document.createElement('p');
+      const displayAuthor = document.createElement('p');
+      const delbtn = document.createElement('div');
+      const container = document.createElement('div');
+      const senti = document.createElement('div');
+      displayTitle.innerText = `"${element.title}" by`;
+      displayAuthor.innerText = element.author;
+      delbtn.innerHTML = `<button class="btn outer" onclick='addedBook.removeBook(${index})'>Remove</button>`;
+      delbtn.classList.add('deleteBook');
+      container.classList.add('library', 'middle');
+      senti.classList.add('library');
+      displayAuthor.classList.add('letter');
+      senti.appendChild(displayTitle);
+      senti.appendChild(displayAuthor);
+      container.appendChild(senti);
+      container.appendChild(delbtn);
+      wrapper.appendChild(container);
+    });
+    hline.classList.add('hline');
+    showArea.appendChild(wrapper);
+    showArea.appendChild(hline);
+  }
+
+  removeBook(index) {
     const bookStorage = localStorage.getItem('books');
     const bookArray = JSON.parse(bookStorage);
-    bookArray.push(storeObj);
+    bookArray.splice(index, 1);
     localStorage.setItem('books', JSON.stringify(bookArray));
+    showArea.innerHTML = '';
+    this.dotiBooks();
   }
-  title.value = '';
-  author.value = '';
-  dotiBooks();
 }
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  storeObj.title = title.value;
-  storeObj.author = author.value;
+
   showArea.innerHTML = '';
-  dataStorage();
+  const book = new Books();
+  book.dataStorage();
 });
-function removeBook(index) {
-  const bookStorage = localStorage.getItem('books');
-  const bookArray = JSON.parse(bookStorage);
-  bookArray.splice(index, 1);
-  localStorage.setItem('books', JSON.stringify(bookArray));
-  showArea.innerHTML = '';
-  dotiBooks();
-}
 
-window.addEventListener('load', dotiBooks);
+const addedBook = new Books();
 
-if ('cl' === 'clz') {
-  removeBook(1);
-}
+window.addEventListener('load', addedBook.dotiBooks());
