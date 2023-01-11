@@ -2,7 +2,6 @@ const form = document.querySelector('#readBook');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const showArea = document.querySelector('#displayBooks');
-const bookLibrary = document.querySelector('#bookLibrary');
 const listbooks = document.querySelector('#listbooks');
 const contactInfo = document.querySelector('#contactpage');
 const contactSection = document.querySelector('.info-section');
@@ -53,7 +52,7 @@ class Books {
       const senti = document.createElement('div');
       displayTitle.innerText = `"${element.title}" by`;
       displayAuthor.innerText = element.author;
-      delbtn.innerHTML = `<button class="btn outer" onclick='deleteItem(${index})'>Remove</button>`;
+      delbtn.innerHTML = `<button class="btn outer" onclick='addedBook.removeBook(${index})'>Remove</button>`;
       delbtn.classList.add('deleteBook');
       container.classList.add('library', 'middle');
       senti.classList.add('library');
@@ -87,9 +86,7 @@ form.addEventListener('submit', (event) => {
 });
 
 const addedBook = new Books();
-const deleteItem = (id) => {
-  addedBook.removeBook(id);
-};
+
 // display and hide page sections
 showArea.classList.add('hidden');
 listbooks.addEventListener('click', () => {
