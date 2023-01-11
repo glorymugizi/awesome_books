@@ -7,10 +7,6 @@
   display: flex;
 }
 
-a:active{
-  color: blue;
-}
-
 .middle {
   align-items: center;
   justify-content: space-between;
@@ -21,9 +17,10 @@ a:active{
   font-weight: 900;
 }
 
-#heading {
+.heading {
   font-weight: 900;
-  font-size: xx-large;
+  font-size: 30px;
+  text-align: center;
 }
 
 .outer {
@@ -76,6 +73,7 @@ a:active{
 
 .navbar h2 {
   padding-left: 25px;
+  font-size: 18px;
 }
 
 .listItems {
@@ -88,7 +86,7 @@ a:active{
 }
 
 .listItems li {
-  font-weight: 900;  
+  font-weight: 900;
 }
 
 .listItems li a {
@@ -107,6 +105,10 @@ a:active{
 
 .hidden {
   display: none;
+}
+
+.addheading {
+  padding-bottom: 30px;
 }
 
 #date {
