@@ -2,7 +2,9 @@ const form = document.querySelector('#readBook');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const showArea = document.querySelector('#displayBooks');
-
+const bookLibrary = document.querySelector('#bookLibrary');
+const listbooks = document.querySelector('#listbooks');
+const today = document.querySelector('.today-date');
 class Books {
   constructor(title, author) {
     this.title = title;
@@ -37,6 +39,7 @@ class Books {
     dotion.innerText = this.author;
     const bookArray = JSON.parse(bookStorage);
     bookArray.forEach((element, index) => {
+      const heading = document.createElement('h1');
       const displayTitle = document.createElement('p');
       const displayAuthor = document.createElement('p');
       const delbtn = document.createElement('div');
@@ -82,5 +85,10 @@ const addedBook = new Books();
 const deleteItem = (id) => {
   addedBook.removeBook(id);
 };
+showArea.classList.add('hidden');
+listbooks.addEventListener('click', () => {
+  showArea.classList.remove('hidden');
+});
+// today = new Date();
 
 window.addEventListener('load', addedBook.dotiBooks());
