@@ -14,51 +14,58 @@
         <ul class="listItems">
           <li id="listbooks">list</li>
           <li id="newbook">add new</li>
-          <li id="contact">contact</li>
+          <li id="contactpage">contact</li>
         </ul>
       </nav>
       <div class="show-date"><span class="today-date">date</span></div>
     </header>
-    <section id="bookLibrary" class="library">
-      <h1 id="heading">All Awesome Books</h1>
-      <div id="displayBooks"></div>
-      <h2>Add a new book</h2>
-      <form action="#" id="readBook">
-        <div class="book-description">
-          <input
-            type="text"
-            class="outer tech"
-            name="title"
-            id="title"
-            placeholder="Title"
-            required
-          />
+    <main>
+      <section id="bookLibrary" class="library">
+        <h1 id="heading">All Awesome Books</h1>
+        <div id="displayBooks"></div>
+        <div class="addbooks">
+          <h2>Add a new book</h2>
+          <form action="#" id="readBook">
+            <div class="book-description">
+              <input
+                type="text"
+                class="outer tech"
+                name="title"
+                id="title"
+                placeholder="Title"
+                required
+              />
+            </div>
+            <div class="">
+              <input
+                type="text"
+                class="outer tech"
+                name="author"
+                id="author"
+                placeholder="Author"
+                required
+              />
+            </div>
+            <button class="outer btn" type="submit">Add</button>
+          </form>
         </div>
-        <div class="">
-          <input
-            type="text"
-            class="outer tech"
-            name="author"
-            id="author"
-            placeholder="Author"
-            required
-          />
-        </div>
-        <button class="outer btn" type="submit">Add</button>
-      </form>
-    </section>
-    <section class="contact-section" id="contact">
-      <h1>Contact Information</h1>
-      <p>Do have any questions or you just want to say "Hello"?<br/>
-        You can reach out to us!</p>
-      <ul>
-        <li>Our email mail@gmail.com</li>
-        <li>Our phone no. 9999999999</li>
-        <li>Our address: xyz</li>
-      </ul>
-    </section>
-    <footer id="footer">Copyright &copy; Joshua Lyngdoh, Glory Mugizi</footer>
+      </section>
+      <section class="hidden info-section">
+        <h1>Contact Information</h1>
+        <p>
+          Do have any questions or you just want to say "Hello"?<br />
+          You can reach out to us!
+        </p>
+        <ul>
+          <li>Our email mail@gmail.com</li>
+          <li>Our phone no. 9999999999</li>
+          <li>Our address: xyz</li>
+        </ul>
+      </section>
+    </main>
+    <footer id="footer">
+      <span>Copyright &copy; Joshua Lyngdoh, Glory Mugizi</span>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="./scripts.js"></script>
   </body>
 </html>
