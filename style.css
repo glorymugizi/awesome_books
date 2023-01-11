@@ -89,3 +89,29 @@
   display: flex;
   justify-content: flex-end;
 }
+
+#footer {
+  border: 2px solid black;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.contact-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact h1{
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.contact-section p{
+  font-size: 20px;
+}
+
+.contact-section ul{
+  list-style: disc;
+  font-size: 15px;
+}
