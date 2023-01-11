@@ -8,8 +8,8 @@ const contactInfo = document.querySelector('#contactpage');
 const contactSection = document.querySelector('.info-section');
 const newbook = document.querySelector('#newbook');
 const addbooks = document.querySelector('.addbooks');
+const dates = document.querySelector('#date');
 
-const today = document.querySelector('.today-date');
 class Books {
   constructor(title, author) {
     this.title = title;
@@ -110,8 +110,7 @@ newbook.addEventListener('click', () => {
   showArea.classList.add('hidden');
   addbooks.style.display = 'flex';
 });
-// add book section
 
-// today = new Date();
+dates.innerHTML = Date();
 
 window.addEventListener('load', addedBook.dotiBooks());

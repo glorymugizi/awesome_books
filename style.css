@@ -7,7 +7,7 @@
   display: flex;
 }
 
-.active a {
+a:active{
   color: blue;
 }
 
@@ -29,6 +29,13 @@
 .outer {
   border: 3px solid black;
   margin: 0.3rem;
+}
+
+.addbooks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
 }
 
 #readBook {
@@ -60,15 +67,20 @@
 
 .navbar {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin: 0 8px;
+  margin: 20px;
+  border: 2px solid black;
+  padding: 1px;
+}
+
+.navbar h2 {
+  padding-left: 25px;
 }
 
 .listItems {
   display: flex;
-  width: 20rem;
+  width: 15rem;
   justify-content: space-around;
   list-style: none;
   overflow: hidden;
@@ -76,12 +88,16 @@
 }
 
 .listItems li {
-  font-weight: 900;
-  padding: 5px 0;
+  font-weight: 900;  
 }
 
 .listItems li a {
   text-decoration: none;
+}
+
+.right {
+  padding-right: 1rem;
+  border-right: 1px solid black;
 }
 
 #newbook,
@@ -93,14 +109,16 @@
   display: none;
 }
 
-.show-date {
+#date {
   display: flex;
   justify-content: flex-end;
+  padding-right: 20px;
 }
 
 #footer {
   border: 2px solid black;
   padding: 1.5rem 0 1.5rem 1.5rem;
+  margin: 10px;
 }
 
 .info-section {
