@@ -85,8 +85,6 @@ form.addEventListener('submit', (event) => {
   book.dataStorage();
 });
 
-const addedBook = new Books();
-
 // display and hide page sections
 showArea.classList.add('hidden');
 listbooks.addEventListener('click', () => {
@@ -109,5 +107,7 @@ newbook.addEventListener('click', () => {
 });
 
 dates.innerHTML = Date();
+
+const addedBook = new Books();
 
 window.addEventListener('load', addedBook.dotiBooks());
