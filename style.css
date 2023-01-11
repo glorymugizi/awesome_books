@@ -7,6 +7,10 @@
   display: flex;
 }
 
+.active a {
+  color: blue;
+}
+
 .middle {
   align-items: center;
   justify-content: space-between;
@@ -74,6 +78,10 @@
 .listItems li {
   font-weight: 900;
   padding: 5px 0;
+}
+
+.listItems li a {
+  text-decoration: none;
 }
 
 #newbook,
